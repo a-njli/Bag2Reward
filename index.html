@@ -1,477 +1,340 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
 
-<head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title>Disposal Tracker</title>
-   <link rel="icon" href="/cal3/images/logo51-removebg-preview.png">
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-   <!-- style css -->
-   <link rel="stylesheet" href="css/style.css">
-
-   <!-- Responsive-->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- fevicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-      media="screen">
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8PGQG8MGW"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-D8PGQG8MGW');
-   </script>
-</head>
-<!-- body -->
-
-<body class="main-layout">
-   <!-- loader  -->
-   <div class="loader-wrapper">
-      <div class="loader"></div>
-      <div class="loader-section section-left"></div>
-      <div class="loader-section section-right"></div>
-   </div>
-   <script>
-      window.addEventListener('load', function () {
-         document.querySelector('body').classList.add("loaded")
-      });
-   </script>
-
-
-   <!-- header -->
-   <header>
-      <div class="header">
-         <div class="container" style="width: auto;">
-            <div class="row">
-               <div class="col-md-9">
-                  <a class="navbar-brand ml-2 mt-3" href="/index.html"><img height="40px" width="320px"
-                        src="images/logo_header.svg"></a>
-               </div>
-               <div class="col-md-3 rightnavlinks">
-
-                  <div class="navlinks">
-                     <ul id="navmenu">
-                        <li><a class="navbar-brand ml-2 mt-3 loginbtn" href="#">Login</a></li>
-
-                        <!-- Login Modal -->
-                        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog"
-                           aria-labelledby="exampleModalLabel" aria-hidden="true"
-                           style="background-color: rgba(0, 0, 0, 0.538);">
-                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <b>
-                                       <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                    </b>
-
-                                    <button type="button" class="close" id="Lclosenow" data-dismiss="modal"
-                                       aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                                 <!-- login details -->
-                                 <div class="modal-body">
-                                    <form action="/action_page.php" class="deskForm" style="display: none;">
-
-                                       <div class="row">
-                                          <div class="col">
-                                             <a href="#" class="fb btn beforebtn" id="Gilogin">
-                                                <i class="fa fa-github"></i> Login with Github
-                                             </a>
-
-                                             <a href="#" class="twitter btn beforebtn" id="Tlogin">
-                                                <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                                             </a>
-
-                                             <a href="#" class="google btn beforebtn" id="Gologin"><i
-                                                   class="fa fa-google fa-fw">
-                                                </i> Login with Google+
-                                             </a>
-
-                                          </div>
-
-                                          <div class="vl">
-                                             <span class="vl-innertext">or</span>
-                                          </div>
-
-                                          <div class="col">
-                                             <div class="hide-md-lg">
-                                                <p>Or sign in manually:</p>
-                                             </div>
-
-                                             <input type="email" name="email" placeholder="Email"
-                                                class="usersLoginEmail" id="DeskuserLoginEmail" required>
-                                             <input type="password" name="password" placeholder="Password"
-                                                id="userLoginpass" required>
-                                             <!-- <input type="submit" value="Login"> -->
-                                             <p class="forgotOptions">
-                                                <a href="#" id="thirdSignupbtn">Sign up</a>
-                                                <a href="#" id="DeskuserForgetPass">Forgot Password?</a>
-                                             </p>
-                                             <p id="alertDesk" style="color: rgb(186, 10, 10);">
-
-                                             </p>
-                                          </div>
-
-                                       </div>
-                                       <p id="LoginConflict" style="color: rgb(186, 10, 10);">
-                                          
-                                       </p>
-                                    </form>
-                                    <form action="/action_page.php" class="mobForm" style="display: none;">
-
-                                       <div class="row">
-                                          <div class="col socials">
-                                             <p class="social-media d-flex">
-                                                <a class="social-icon icongithub d-flex align-items-center justify-content-center"
-                                                   id="giMobLogin">
-                                                   <i class="fa fa-github"></i></a>
-
-                                                <a class="social-icon twi d-flex align-items-center justify-content-center"
-                                                   id="twiMobLogin">
-                                                   <i class="fa fa-twitter"></i></a>
-
-                                                <a class="social-icon G d-flex align-items-center justify-content-center"
-                                                   id="googleMobLogin">
-                                                   <i class="fa fa-google" aria-hidden="true"></i></a>
-                                             </p>
-
-                                          </div>
-
-                                          <div class="vl">
-                                             <span class="vl-innertext">or</span>
-                                          </div>
-
-                                          <div class="col">
-                                             <div class="hide-md-lg">
-                                                <p>Or sign in manually:</p>
-                                             </div>
-
-                                             <input type="email" name="email" placeholder="Email "
-                                                class="usersLoginEmail" id="MobuserLoginEmail" required>
-                                             <input type="password" name="password" placeholder="Password"
-                                                id="MobuserLoginpass" required>
-                                             <!-- <input type="submit" value="Login"> -->
-                                             <p class="forgotOptions">
-                                                <a id="forthSignupbtn">Sign up</a>
-                                                <a id="MobuserForgetPass">Forgot Password?</a>
-                                             </p>
-                                             <p id="alertMob" style="color: rgb(186, 10, 10);">
-
-                                             </p>
-                                          </div>
-
-                                       </div>
-                                       <p id="MobLoginConflict" style="color: rgb(186, 10, 10);">
-
-                                       </p>
-                                    </form>
-
-                                 </div>
-                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" id="loginFormbtn"></button>
-
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
-                        <!-- Forgot Password Modal -->
-                        <div class="modal fade" id="ForgotPassModal" tabindex="-1" role="dialog"
-                           aria-labelledby="exampleModalLabel" aria-hidden="true"
-                           style="background-color: rgba(0, 0, 0, 0.538);">
-                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <b>
-                                       <h5 class="modal-title">Forgot Password?</h5>
-                                    </b>
-
-                                    <button type="button" class="close" id="closenow" data-dismiss="modal"
-                                       aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                                 <!-- login details -->
-                                 <div class="modal-body">
-
-                                    <form action="/action_page.php" id="FPForm" style="display: none;">
-
-                                       <div class="row">
-                                          <div class="col">
-                                             <p><b>Email</b></p>
-                                             <input type="email" name="email" placeholder="Enter email" id="forgetEmail"
-                                                required>
-                                             <p id="alertFP" style="color: rgb(186, 10, 10);">
-
-                                             </p>
-                                          </div>
-
-                                       </div>
-                                    </form>
-
-                                 </div>
-                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" id="FPnext">Reset Password</button>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
-
-                        <li><a class="navbar-brand ml-2 mt-3 signupbtn" href="#">Sign up</a></li>
-                        <!-- Signup Modal -->
-                        <div class="modal fade" id="SigninModal" tabindex="-1" role="dialog"
-                           aria-labelledby="exampleModalLabel" aria-hidden="true"
-                           style="background-color: rgba(0, 0, 0, 0.538);">
-                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <b>
-                                       <h5 class="Smodal-title" id="exampleModalLabel"></h5>
-                                    </b>
-
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                                 <!-- signin details -->
-                                 <div class="modal-body">
-                                    <form action="/action_page.php" class="deskForm" style="display: none;">
-
-                                       <div class="row">
-
-                                          <div class="col">
-                                             <div class="hide-md-lg">
-                                                <p>Or sign in manually:</p>
-                                             </div>
-
-                                             <p><b>Email</b></p>
-                                             <input type="text" name="email" placeholder="Enter email"
-                                                id="deskSigninEmail" required>
-                                             <p><b>Username</b></p>
-                                             <input type="text" name="username" placeholder="Enter username"
-                                                id="deskSigninName" required>
-                                             <p><b>Password</b></p>
-                                             <input type="password" name="password" placeholder="Enter password"
-                                                id="deskSigninPassword" required>
-                                             <p><b>Confirm Password</b></p>
-                                             <input type="password" name="repeatPassword" placeholder="Repeat password"
-                                                id="deskSigninRepass" required>
-
-                                             <div
-                                                style="display:flex;justify-content: flex-start; align-items: center;">
-                                                <input type="checkbox" checked="checked" name="remember"
-                                                   style="margin: 0 !important; width: auto;">
-                                                <p style="display: inline; margin-left: 5px;"> Remember me</p>
-                                             </div>
-                                             <p class="terms">
-                                                By creating an account you agree to our <a href="#"
-                                                   style="color:dodgerblue"> Terms & Privacy</a>.
-                                             </p>
-                                             <p class="existingEmail" style="color: rgb(186, 10, 10);">
-
-                                             </p>
-                                          </div>
-
-                                       </div>
-                                    </form>
-                                    <form action="/action_page.php" class="mobForm" style="display: none;">
-
-                                       <div class="row">
-
-                                          <div class="col">
-
-                                             <p><b>Email</b></p>
-                                             <input type="text" name="email" placeholder="Enter email"
-                                                id="mobSigninEmail" required>
-                                             <p><b>Username</b></p>
-                                             <input type="text" name="username" placeholder="Enter username"
-                                                id="mobSigninName" required>
-                                             <p><b>Password</b></p>
-                                             <input type="password" name="password" placeholder="Enter password"
-                                                id="mobSigninPassword" required>
-                                             <p><b>Confirm Password</b></p>
-                                             <input type="password" name="repeatPassword" placeholder="Repeat password"
-                                                id="mobSigninRepass" required>
-
-                                             <div
-                                                style="display:flex;justify-content: flex-start; align-items: center;">
-                                                <input type="checkbox" checked="checked" name="remember"
-                                                   style="margin: 0 !important; width: auto;">
-                                                <p style="display: inline; margin-left: 5px;"> Remember me</p>
-                                             </div>
-                                             <p class="terms">
-                                                By creating an account you agree to our <a href="#"
-                                                   style="color:dodgerblue !important;"> Terms & Privacy</a>.
-                                             </p>
-                                             <p class="existingEmail" style="color: rgb(186, 10, 10);">
-
-                                             </p>
-                                          </div>
-
-                                       </div>
-                                    </form>
-                                 </div>
-                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" id="SigninFormbtn"></button>
-
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
-                     </ul>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8fbfa] group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8f3ec] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e1b13]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em]">EcoBag Rewards</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Rewards</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Locations</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">FAQ</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e8f3ec] text-[#0e1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0e1b13]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e8f3ec] text-[#0e1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0e1b13]" data-icon="User" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/d9fbf5e5-6c77-439e-8e81-4c83af28535a.png");'
+                >
+                  <h1
+                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center"
+                  >
+                    Earn rewards for recycling your reusable bags
+                  </h1>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#18b459] text-[#0e1b13] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  >
+                    <span class="truncate">Schedule Pickup</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How it works</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e6d9] bg-[#f8fbfa] p-4 flex-col">
+                <div class="text-[#0e1b13]" data-icon="Trash" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#0e1b13] text-base font-bold leading-tight">Recycle at a partner location</h2>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">Find a participating store or drop-off location. Ask staff where to recycle your reusable bag.</p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e6d9] bg-[#f8fbfa] p-4 flex-col">
+                <div class="text-[#0e1b13]" data-icon="Gift" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#0e1b13] text-base font-bold leading-tight">Get 1 point for each bag</h2>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">Earn 1 point for each bag you recycle. Make sure your bag is clean and dry.</p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e6d9] bg-[#f8fbfa] p-4 flex-col">
+                <div class="text-[#0e1b13]" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#0e1b13] text-base font-bold leading-tight">Exchange points for rewards</h2>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">Log in to your account and exchange your points for rewards.</p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e6d9] bg-[#f8fbfa] p-4 flex-col">
+                <div class="text-[#0e1b13]" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#0e1b13] text-base font-bold leading-tight">Get $1 off for every 10 points</h2>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">When you're ready to redeem, use your unique discount code online or at checkout.</p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e6d9] bg-[#f8fbfa] p-4 flex-col">
+                <div class="text-[#0e1b13]" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#0e1b13] text-base font-bold leading-tight">Help reduce waste and earn rewards</h2>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">Every bag you recycle helps reduce waste and keeps reusable bags in use longer.</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured rewards</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/6651617c-727a-46c6-811a-246a05647c74.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0cd3efea-fea5-442b-b523-491b718e5795.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/471a3c4a-1c4c-4304-bf0d-efac611abdd7.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/de38cc67-3468-462b-843e-c3b2fd44b1d3.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/e580ef62-6137-494a-943e-173c1097bdc7.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/bbab4b4d-b663-4445-8d95-7f6ab449dfd6.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/4d97778c-c5d7-4d26-aa21-65381aa1fa35.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/7cbeadbb-470a-493d-9a9a-81ff62f72099.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">$5 off</p>
+                  <p class="text-[#4f966d] text-sm font-normal leading-normal">10 points</p>
+                </div>
+              </div>
+            </div>
+            <div class="@container">
+              <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+                <div class="flex flex-col gap-2 text-center">
+                  <h1
+                    class="text-[#0e1b13] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                  >
+                    Ready to start earning rewards?
+                  </h1>
+                </div>
+                <div class="flex flex-1 justify-center">
+                  <div class="flex justify-center">
+                    <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#18b459] text-[#0e1b13] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
+                    >
+                      <span class="truncate">Join now</span>
+                    </button>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-   </header>
-
-
-   <!-- end header inner -->
-   <!-- end header -->
-   <!-- banner -->
-   <section class="banner_main">
-
-      <div class="container-fluid">
-         <div class="row d_flex">
-            <div class="col-xl-6 col-lg-6 col-md-6 mt-5">
-               <div class="text-bg">
-                  <strong>Transforming Excess into Opportunity</strong>
-                  <span>Get
-                     Exciting Coupouns<br></span>
-                  <strong>Submit your Images</strong>
-                  <a href="#" target="_blank">Get Started</a>
-               </div>
+    </div>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#f8fbfa] group/design-root overflow-x-hidden"
+      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(14,27,19)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e'); font-family: Epilogue, &quot;Noto Sans&quot;, sans-serif;">
+      <div class="layout-container flex h-full grow flex-col">
+        
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0e1b13] text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Step 1: Collect your reusable bags</p>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 padding_lert2">
-
-              
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">What to collect</h2>
+            <p class="text-[#0e1b13] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We accept reusable bags from any store, in any condition. This includes canvas bags, nylon bags, and tote bags.
+            </p>
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Where to find them</h2>
+            <p class="text-[#0e1b13] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              You likely have more reusable bags than you think. Search for them in the following places:
+            </p>
+            <div class="px-4">
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#d0e6d9] border-2 bg-transparent text-[#18b459] checked:bg-[#18b459] checked:border-[#18b459] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#d0e6d9] focus:outline-none"
+                  checked=""
+                />
+                <p class="text-[#0e1b13] text-base font-normal leading-normal">Kitchen</p>
+              </label>
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#d0e6d9] border-2 bg-transparent text-[#18b459] checked:bg-[#18b459] checked:border-[#18b459] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#d0e6d9] focus:outline-none"
+                  checked=""
+                />
+                <p class="text-[#0e1b13] text-base font-normal leading-normal">Pantry</p>
+              </label>
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#d0e6d9] border-2 bg-transparent text-[#18b459] checked:bg-[#18b459] checked:border-[#18b459] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#d0e6d9] focus:outline-none"
+                />
+                <p class="text-[#0e1b13] text-base font-normal leading-normal">Closet</p>
+              </label>
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#d0e6d9] border-2 bg-transparent text-[#18b459] checked:bg-[#18b459] checked:border-[#18b459] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#d0e6d9] focus:outline-none"
+                />
+                <p class="text-[#0e1b13] text-base font-normal leading-normal">Car</p>
+              </label>
             </div>
-         </div>
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How many bags do I need?</h2>
+            <p class="text-[#0e1b13] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We recommend collecting at least 5 reusable bags to ensure you're eligible for rewards.
+            </p>
+            <h2 class="text-[#0e1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Step 2: Prep your bags for pickup</h2>
+            <p class="text-[#0e1b13] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Place your reusable bags in a larger bag (like a trash bag) for easy pickup. Please note that we cannot accept plastic bags in your recycling bag.
+            </p>
+            <div class="flex w-full grow bg-[#f8fbfa] @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-[#f8fbfa] @[480px]:gap-2 aspect-[2/3] rounded-xl flex">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/660b305c-0523-4ef6-a88d-ab53d3c26c27.png");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#4f966d] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#4f966d] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#4f966d] text-base font-normal leading-normal">@2023 Rewards</p>
+            </footer>
+          </div>
+        </footer>
       </div>
-
-   </section>
-   <!-- end banner -->
-   <!-- about -->
-   <div class="about">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-10 offset-md-1" style="height: 160px;">
-
-            </div>
-
-         </div>
-
-      </div>
-   </div>
-   <section id="introblocks" class="mb-5 pb-5 center container-fluid">
-      <ul class="nospace ">
-         <li class="one_third">
-            <div class="titlepage">
-               <span>About our</span>
-               <h2>Tacking System</h2>
-               <div class="accText">
-                  <br>
-                  <p>An innovative project combining smart disposal bags with image verification technology. Earn points by responsibly disposing of waste, verified through our app. Redeem points for coupons and rewards from eco-conscious businesses. Join us in making a cleaner, greener planet!</p>
-               </div>
-            </div>
-         </li>
-      </ul>
-   </section>
-   <!-- end about -->
-
-
-
-   <!-- contact -->
-   <div id="contact" class="contact">
-      <div class="container">
-         <div class="row d_flex">
-            <div class="col-md-6">
-               <div class="contact_box">
-                  <div class="titlepage">
-                     <span>History record</span>
-                     <h2>Benefits of Contribution.</h2>
-                  </div>
-                  <p>Smart disposal bags improve waste management by promoting responsible disposal practices and enhancing recycling efforts. They utilize image verification technology to ensure accurate tracking of waste types, encouraging eco-friendly behaviors. Users earn redeemable points for their contributions, fostering community engagement and environmental awareness. Partnering with eco-conscious businesses offers rewards that further incentivize sustainable living, creating a positive impact on both individuals and the environment.
-
-                  </p>
-               </div>
-            </div>
-            <div class="col-md-6">
-               <figure style="justify-content: center; text-align: center;"><img src="images/bags.webp" alt="#" />
-               </figure>
-            </div>
-         </div>
-         <br><br><br><br><br><br><br>
-
-      </div>
-   </div>
-   <!-- end contact -->
-
-
-   <!--  footer -->
-   <footer>
-      <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-8 offset-md-2">
-                  <div class="cont">
-                     <h3>Disposable Bag Tracker <br>
-                        Earn Points and Redeem Coupouns
-                     </h3>
-                     <p>Recycling plastic waste with rewards.</p>
-                     <a class="read_more" id="secondLoginbtn">Login</a>
-                     <a class="signup" id="Secondsignupbtn" href="#">Sign up</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <p>© 2024 Disposable Bag Tracker.</a></p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <!-- end footer -->
-   <!-- Javascript files-->
-   <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
-   <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
-   <script src="js/plugin.js"></script>
-   <!-- sidebar -->
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script type="module" src="./js/Cal_Firebase.js"></script>
-   <script src="js/custom.js"></script>
-   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-</body>
-
+    </div>
+  </body>
 </html>
