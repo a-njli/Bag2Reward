@@ -18,6 +18,7 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
 
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
+ const db = getFirestore(app);
 
  function showMessage(message, divId){
     var messageDiv=document.getElementById(divId);
@@ -51,7 +52,7 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='index.html';
+            window.location.href='login.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);
