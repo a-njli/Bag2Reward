@@ -51,7 +51,7 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='schedule.html';
+            window.location.href='index.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);
